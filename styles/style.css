@@ -1,0 +1,420 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  height: 100vh;
+  background-image: url(../img/2.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.button {
+  padding: 0;
+  background: inherit;
+  border: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: calc(1630/1920 * 100%);
+  padding: 0 15px;
+}
+
+
+/* HEADER */
+
+.header {
+  padding: 50px 0;
+}
+
+.nav {
+  width: 38%;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.heading {
+  margin: 0;
+  font-size: 20px;
+}
+
+.link {
+  font-size: 20px;
+  font-weight: 400;
+  color: white;
+  transition: color .3s ease-in-out;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  width: 10%;
+  justify-content: space-between;
+}
+
+.controls__link-svg {
+  margin-right: 6px;
+}
+
+.burger {
+  cursor: pointer;
+}
+
+.controls__burger {
+  display: block;
+  position: relative;
+  width: 32px;
+  height: 24px;
+}
+
+.burger__mid-lane {
+  position: absolute;
+  right: 0;
+  top: 10.5px;
+  width: 20px;
+  height: 2px;
+  background-color: white;
+  transition: background-color .3s ease-in-out;
+}
+
+.controls__burger::before,
+.controls__burger::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  height: 2px;
+  background-color: white;
+  transition: background-color .3s ease-in-out;
+}
+
+.controls__burger::before {
+  top: 0;
+  width: 32px;
+}
+
+.controls__burger::after {
+  bottom: 0;
+  width: 26px;
+}
+
+.controls__burger:hover .burger__mid-lane,
+.controls__burger:hover::after,
+.controls__burger:hover::before {
+  background-color: #415aff;
+}
+
+.link:hover {
+  color: #415aff;
+}
+
+.controls__link-svg path {
+  transition: fill .3s ease-in-out;
+}
+
+.controls__link:hover .controls__link-svg path {
+  fill: #415aff;
+}
+
+/* MAIN */
+
+.main {
+  position: relative;
+}
+
+.opponent {
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: right;
+  top: 230px;
+  left: 0;
+  width: 38.5%;
+  height: 160px;
+  background-color: white;
+}
+
+.opponent::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -60px;
+  width: 20%;
+  height: 100%;
+  background-color: white;
+  border-radius: 4%;
+  transform: skew(-30deg);
+  min-width: 120px;
+}
+
+.opponent-second {
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: left;
+  top: 390px;
+  right: 0;
+  width: 38.5%;
+  height: 160px;
+  background-color: white;
+}
+
+.opponent-second::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -60px;
+  width: 20%;
+  height: 100%;
+  background-color: white;
+  border-radius: 4%;
+  transform: skew(-30deg);
+  min-width: 120px;
+}
+
+.hexagon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  transition: all 1s ease-in-out;
+}
+
+.hexagon::before,
+.hexagon::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: inherit;
+  height: inherit;
+  background-color: inherit;
+  border-radius: inherit;
+}
+
+.hexagon::before {
+  transform: rotate(60deg);
+}
+
+.hexagon::after {
+  transform: rotate(-60deg);
+}
+
+.hexagon-main {
+  justify-content: center;
+  top: 230px;
+  left: 44.6%;
+  width: 206px;
+  height: 320px;
+  background-color: white;
+  border-radius: 27px;
+}
+
+.hexagon-middle {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  width: 123px;
+  height: 190px;
+  background-color: white;
+  border-radius: 17px;
+  transition: all 1s ease-in-out;
+}
+
+.hexagon-middle_top {
+  top: 140px;
+  left: 60%;
+}
+
+.hexagon-middle_bottom {
+  top: 455px;
+  left: 33%;
+}
+
+.hexagon-small {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  width: 71px;
+  height: 110px;
+  background-color: white;
+  border-radius: 10px;
+  transition: all 1s ease-in-out;
+}
+
+.hexagon-small_top {
+  top: 75px;
+  left: 70.5%;
+}
+
+.hexagon-small_bottom {
+  top: 600px;
+  left: 25%;
+}
+
+.opponent-text {
+  position: relative;
+  font-size: 40px;
+  font-weight: bold;
+  z-index: 2;
+}
+
+.hexagon__text {
+  display: block;
+  position: relative;
+  z-index: 2;
+  font-size: 26px;
+}
+
+.hexagon__link-button {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  padding: 10px 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: 26px;
+  z-index: 2;
+}
+
+.text-location {
+  margin-bottom: 20px;
+}
+
+.text-date {
+  font-weight: bold;
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.text-time {
+  margin-bottom: 20px;
+}
+
+.hexagon__text_medium {
+  width: 50px;
+  text-align: center;
+  font-size: 28px;
+}
+
+.hexagon__text_small {
+  width: 50px;
+  text-align: center;
+  font-size: 22px;
+}
+
+.show-block-animation {
+  animation: showBlock 1s ease-in-out forwards;
+}
+
+.delete-block-animation {
+  animation: deleteBlock 1s ease-in-out forwards;
+}
+
+.show-block-top-animation {
+  animation: showBlockTop 1s ease-in-out forwards;
+}
+
+.delete-block-bottom-animation {
+  animation: deleteBlockBottom 1s ease-in-out forwards;
+}
+
+.opacity-animation {
+  animation: opacityAnimation .6s ease-in-out forwards;
+}
+
+@keyframes showBlock {
+  0% {
+    opacity: 0;
+    transform: translate3d(120px, -100px, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes showBlockTop {
+  0% {
+    opacity: 0;
+    transform: translate3d(-120px, 100px, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes deleteBlockBottom {
+  0% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate3d(140px, -95px, 0);
+  }
+}
+
+@keyframes deleteBlock {
+  0% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate3d(-140px, 95px, 0);
+  }
+}
+
+@keyframes opacityAnimation {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 426px) {
+  .nav-list {
+    display: none;
+  }
+
+  .controls__link {
+    display: none;
+  }
+}
