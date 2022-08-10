@@ -5,7 +5,7 @@ function handleClick(event, indexFromWheelEvent) {
   if (event && mainIndex !== +this.dataset.curMainIndex) {
     const curMainIndex = this.dataset.curMainIndex;
     selectHexagon(mainIndex, curMainIndex);
-  } else {
+  } else if (indexFromWheelEvent !== undefined) {
     selectHexagon(mainIndex, indexFromWheelEvent);
   }
 };
